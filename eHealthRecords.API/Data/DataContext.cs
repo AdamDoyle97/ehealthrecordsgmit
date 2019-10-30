@@ -9,5 +9,7 @@ namespace eHealthRecords.API.Data
 
         public DbSet<Value> Values { get; set; } //this will be the table name in sql database
 
+        public DbSet<User> Users { get; set; }
+
     }
 }
