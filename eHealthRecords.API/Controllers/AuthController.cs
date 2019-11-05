@@ -48,6 +48,8 @@ namespace eHealthRecords.API.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)
         {
+                 throw new Exception("Computer say no!");
+
             var userFromRepo = await _repo.Login(userForLoginDto.Username.ToLower(), userForLoginDto.Password);
 
             if (userFromRepo == null)
@@ -77,8 +79,6 @@ namespace eHealthRecords.API.Controllers
             return Ok(new {
                 token = tokenHandler.WriteToken(token)
             });
-
-            
         }
     }
 }
