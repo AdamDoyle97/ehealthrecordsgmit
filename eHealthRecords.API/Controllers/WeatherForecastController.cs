@@ -34,6 +34,7 @@ namespace eHealthRecords.API.Controllers
             _logger = logger;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetWeatherForecast() //async code is used for when more than one user is requesting
         {

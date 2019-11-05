@@ -1,21 +1,21 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="#">eHealthRecords</a>
+  <a class="navbar-brand" href="#"><i class="fa fa-heartbeat" style="font-size:20px; color: red;"></i> eHealthRecords</a>
 
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active"> 
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="#"><i class="fa fa-home"></i> Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Profile</a>
+        <a class="nav-link" href="#"><i class="fa fa-user"></i> Profile</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Doctor</a>
+        <a class="nav-link" href="#"><i class="fa fa-user-md"></i> Doctor</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" (click)="logout()">Log out</a>
+          <a class="nav-link" (click)="logout()"><i class="fa fa-sign-out"></i> Log out</a>
         </li>
       <div *ngIf="loggedIn()" class="dropdown">
-          <button class="dropdown-toggle text-light">
+          <button class="dropdown-toggle">
             Medical Info
           </button>
           <div class="dropdown-menu">
