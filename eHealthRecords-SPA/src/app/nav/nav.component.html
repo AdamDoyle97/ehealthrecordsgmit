@@ -1,16 +1,19 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
   <div class="container">
-      <a class="navbar-brand" href="#"><i class="fa fa-heartbeat" style="font-size:20px; color: red;"></i> eHealthRecords</a>
+      <a class="navbar-brand" [routerLink]="['/home']"><i class="fa fa-heartbeat" style="font-size:20px; color: red;"></i> eHealthRecords</a>
       
       <ul *ngIf="!loggedIn()" class="navbar-nav mr-auto">
-        <li class="nav-item active"> 
-          <a class="nav-link" href="#"><i class="fa fa-home"></i> Home</a>
+        <li class="nav-item" routerLinkActive="active"> 
+          <a class="nav-link" [routerLink]="['/home']"><i class="fa fa-home"></i> Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa fa-user"></i> Profile</a>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/members']"><i class="fa fa-user"></i> Profile</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa fa-user-md"></i> Doctor</a>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/lists']"><i class="fa fa-user-md"></i> Doctor</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/messages']"><i class="fa fa-address-book"></i> Message</a>
         </li>
         </ul>
         <div *ngIf="loggedIn()" class="dropdown" dropdown>
