@@ -11,5 +11,7 @@ namespace eHealthRecords.API.Data
 
         public DbSet<User> Users { get; set; }
 
+        public DbSet<Photo> Photos { get; set; }
+
     }
 }

@@ -11,5 +11,8 @@ namespace eHealthRecords.API.DTOs
         [Required]
         [StringLength(8, MinimumLength = 4, ErrorMessage = "Password must be between 4 - 8 characters")]
         public string Password { get; set; }
+
+        // [Required]
+        // public DateTime DateOfBirth { get; set; }
     }
 }

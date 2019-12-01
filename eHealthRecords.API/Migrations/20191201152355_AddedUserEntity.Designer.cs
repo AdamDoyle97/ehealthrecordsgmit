@@ -9,7 +9,7 @@ using eHealthRecords.API.Data;
 namespace eHealthRecords.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20191024150404_AddedUserEntity")]
+    [Migration("20191201152355_AddedUserEntity")]
     partial class AddedUserEntity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,31 +21,25 @@ namespace eHealthRecords.API.Migrations
             modelBuilder.Entity("eHealthRecords.API.Models.User", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .ValueGeneratedOnAdd();
 
-                    b.Property<byte[]>("PasswordHash")
-                        .HasColumnType("BLOB");
+                    b.Property<byte[]>("PasswordHash");
 
-                    b.Property<byte[]>("PasswordSalt")
-                        .HasColumnType("BLOB");
+                    b.Property<byte[]>("PasswordSalt");
 
-                    b.Property<string>("Username")
-                        .HasColumnType("TEXT");
+                    b.Property<string>("Username");
 
                     b.HasKey("Id");
 
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("eHealthRecords.API.Models.Value", b =>
+            modelBuilder.Entity("DatingApp.API.Models.Value", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name")
-                        .HasColumnType("TEXT");
+                    b.Property<string>("Name");
 
                     b.HasKey("Id");
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using eHealthRecords.API.Data;
 using eHealthRecords.API.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -19,6 +20,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Options;
 
 namespace eHealthRecords.API
 {
@@ -35,10 +37,16 @@ namespace eHealthRecords.API
         public void ConfigureServices(IServiceCollection services)
         {
             //putting it in services injects it straight into the project startup
-            services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection"))); //installed sqlite package 3.0.0 and used dotnet restore``
-            services.AddControllers();
+            services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection"))); //installed sqlite package 3.0.0 and used dotnet restore
+            services.AddControllers().AddNewtonsoftJson(OperatingSystem =>
+            {
+                OperatingSystem.SerializerSettings.ReferenceLoopHandling =
+                Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            });
             services.AddCors();
+            services.AddAutoMapper(typeof(RecordsRepository).Assembly);
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<IRecordsRepository, RecordsRepository>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options => {
                     options.TokenValidationParameters = new TokenValidationParameters
