@@ -7,7 +7,8 @@ namespace eHealthRecords.API.Data
     {
         public DataContext(DbContextOptions<DataContext> options) : base (options){}
 
-        public DbSet<Value> Values { get; set; } //this will be the table name in sql database
+        //this will be the table name in sql database
+        public DbSet<Value> Values { get; set; } 
 
         public DbSet<User> Users { get; set; }
 

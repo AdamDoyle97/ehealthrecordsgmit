@@ -4,7 +4,8 @@ using eHealthRecords.API.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace eHealthRecords.API.Data
-{
+{ // this is the concrete authrepository 
+// tells class were using IAuth
     public class AuthRepository : IAuthRepository
     {
         private readonly DataContext _context;
@@ -19,7 +20,7 @@ namespace eHealthRecords.API.Data
             if(username == null)
                 return null;
 
-            if(!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
+            if(!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt)) // returns true or false depending if password macthes
                 return null;
 
             return user;
@@ -29,7 +30,7 @@ namespace eHealthRecords.API.Data
         {
             using(var hmac = new System.Security.Cryptography.HMACSHA512(passwordSalt)) //HMAC uses hash based message
             {
-                var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+                var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password)); // if hashes match means password is correct
                 for(int i = 0; i < computedHash.Length; i++)
                 {
                     if(computedHash[i] !=passwordHash[i]) return false;
@@ -56,15 +57,15 @@ namespace eHealthRecords.API.Data
         {
             using(var hmac = new System.Security.Cryptography.HMACSHA512()) //HMAC uses hash based message
             {
-                passwordSalt = hmac.Key;
-                passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+                passwordSalt = hmac.Key; /// setting password salt to the randomly generated key
+                passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password)); // gets password as a byte array
             }
             
         }
 
         public async Task<bool> UserExists(string username)
         {
-            if(await _context.Users.AnyAsync(x => x.Username == username))
+            if(await _context.Users.AnyAsync(x => x.Username == username)) // compare this username against all other usernames
                 return true;
 
             return false;

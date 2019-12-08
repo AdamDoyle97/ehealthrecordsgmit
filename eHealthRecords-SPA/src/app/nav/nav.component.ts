@@ -9,14 +9,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  model: any = {};
+  model: any = {}; // will store username and password
 
   constructor(public authService: AuthService , private alertify: AlertifyService,
               private router: Router) { }
 
   ngOnInit() {
   }
-
+// login method the shows successful login
   login() {
     this.authService.login(this.model).subscribe(next => {
     this.alertify.success('logged in successfully');
@@ -27,13 +27,13 @@ export class NavComponent implements OnInit {
       this.router.navigate(['/members']);
     });
   }
-
+// if token is empty it will return false
   loggedIn() {
     const token = localStorage.getItem('token');
     return !!token;
     // return this.authService.loggedIn();
   }
-
+// removes token so user logs out
   logout() {
     localStorage.removeItem('token');
     this.alertify.message('logged out');

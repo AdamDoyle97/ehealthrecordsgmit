@@ -16,6 +16,8 @@ namespace eHealthRecords.API.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
+        // injects DataContext into WeatherController
+        // private field _context can be used throughout class
         private readonly DataContext _context;
         public WeatherForecastController(DataContext context) 
         {
@@ -34,13 +36,17 @@ namespace eHealthRecords.API.Controllers
             _logger = logger;
         }
 
+        // get api/weatherforecast values
         [AllowAnonymous]
         [HttpGet]
+        // IActionResult allows hhtp responses to the client
+        // Async allows other requests to be processed and not be haulted by one processing
         public async Task<IActionResult> GetWeatherForecast() //async code is used for when more than one user is requesting
         {
+            // ToList gets values as a list and sends them out to client (postman for testing)
             var values = await _context.Values.ToListAsync();
 
-            return Ok(values);
+            return Ok(values); // if successful returns http 200Ok to postman
         }
     }
 }

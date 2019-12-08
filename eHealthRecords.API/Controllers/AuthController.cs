@@ -19,7 +19,7 @@ namespace eHealthRecords.API.Controllers
     {
         private readonly IAuthRepository _repo;
         private readonly IConfiguration _config;
-        public AuthController(IAuthRepository repo, IConfiguration config)
+        public AuthController(IAuthRepository repo, IConfiguration config) // injects auth repository 
         {
             _config = config;
             _repo = repo;
@@ -29,10 +29,9 @@ namespace eHealthRecords.API.Controllers
         public async Task<IActionResult> Register(UserForRegisterDto userForRegisterDto)
         {
             //validate request
+            userForRegisterDto.Username = userForRegisterDto.Username.ToLower(); // converts username to lower case
 
-            userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
-
-            if (await _repo.UserExists(userForRegisterDto.Username))
+            if (await _repo.UserExists(userForRegisterDto.Username)) // checks if username exists
                 return BadRequest("Username already exists");
 
             var userToCreate = new User
@@ -49,12 +48,12 @@ namespace eHealthRecords.API.Controllers
         public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)
         {
 
-            var userFromRepo = await _repo.Login(userForLoginDto.Username.ToLower(), userForLoginDto.Password);
+            var userFromRepo = await _repo.Login(userForLoginDto.Username.ToLower(), userForLoginDto.Password); // checks if user is valid in Db
 
             if (userFromRepo == null)
                 return Unauthorized(); //created unauthorized incase someone has another users userame but wrong password
 
-            var claims = new[]
+            var claims = new[] // security for name id and username
             {
                 new Claim(ClaimTypes.NameIdentifier, userFromRepo.Id.ToString()),
                 new Claim(ClaimTypes.Name, userFromRepo.Username)
@@ -64,7 +63,7 @@ namespace eHealthRecords.API.Controllers
 
             var cred = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
 
-            var tokenDescriptor = new SecurityTokenDescriptor
+            var tokenDescriptor = new SecurityTokenDescriptor // creates token here
             {
                 Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.Now.AddDays(1),
@@ -73,7 +72,7 @@ namespace eHealthRecords.API.Controllers
 
             var tokenHandler = new JwtSecurityTokenHandler();
 
-            var token = tokenHandler.CreateToken(tokenDescriptor);
+            var token = tokenHandler.CreateToken(tokenDescriptor); // token contains jwt token that returns to client
 
             return Ok(new {
                 token = tokenHandler.WriteToken(token)

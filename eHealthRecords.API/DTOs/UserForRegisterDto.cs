@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace eHealthRecords.API.DTOs
 {
-    //Data Transfer Object (DTO) is used for transfering the username and password when registering
+    //Data Transfer Object (DTO) is used for transfering the username and password to the view when registering
     public class UserForRegisterDto
     {
         [Required]

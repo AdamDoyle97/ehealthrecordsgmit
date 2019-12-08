@@ -30,8 +30,7 @@ namespace eHealthRecords.API
         {
             Configuration = configuration;
         }
-
-        public IConfiguration Configuration { get; }
+                public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -43,10 +42,10 @@ namespace eHealthRecords.API
                 OperatingSystem.SerializerSettings.ReferenceLoopHandling =
                 Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
-            services.AddCors();
+            services.AddCors(); // CORS allows the api to send data to the client and the client accepts data from the server knowing its safe
             services.AddAutoMapper(typeof(RecordsRepository).Assembly);
-            services.AddScoped<IAuthRepository, AuthRepository>();
-            services.AddScoped<IRecordsRepository, RecordsRepository>();
+            services.AddScoped<IAuthRepository, AuthRepository>(); // service is created once per request for auth repository 
+            services.AddScoped<IRecordsRepository, RecordsRepository>(); 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options => {
                     options.TokenValidationParameters = new TokenValidationParameters
@@ -60,7 +59,8 @@ namespace eHealthRecords.API
                 });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
+        // middleware that reacts to the request as its being processed
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -68,6 +68,7 @@ namespace eHealthRecords.API
                 app.UseDeveloperExceptionPage();
             }
             else{
+                // global exception handler
                 app.UseExceptionHandler(builder => {
                     builder.Run(async context => {
                         context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
@@ -87,12 +88,14 @@ namespace eHealthRecords.API
                // app.UseHsts(); //turn this off as we dont want it to go into production, yet
             }*/
            // app.UseHttpsRedirection(); //turn this off as this will redirect to https 
-           app.UseCors(x => x.AllowAnyOrigin().AllowAnyOrigin().AllowAnyHeader().AllowAnyHeader());
+            // app.UseCors(x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()); // cors policy weak as its still in development
             
-            app.UseAuthentication();
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()); // cors policy weak as its still in development
 
             app.UseEndpoints(endpoints =>
             {
