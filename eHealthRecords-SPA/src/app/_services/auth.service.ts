@@ -20,7 +20,7 @@ login(model: any) {
     .pipe(
       map((response: any) => {
         const user = response;
-        if (user.token) {
+        if (user) {
           localStorage.setItem('token', user.token);
           this.decodedToken = this.jwtHelper.decodeToken(user.token);
           console.log(this.decodedToken);
@@ -35,6 +35,6 @@ register(model: any) {
 
 loggedIn() {
   const token = localStorage.getItem('token');
-  return !this.jwtHelper.isTokenExpired(token);
+  return !this.jwtHelper.isTokenExpired(token); // if token is not expired it will return true
 }
 }

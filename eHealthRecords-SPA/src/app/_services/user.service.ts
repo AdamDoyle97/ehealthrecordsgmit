@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
 import { User } from '../_models/user';
 
 // no need for this as i've included whitelisted domains and blacklistedroutes
-// const httpOptions = {
-//   headers: new HttpHeaders({
-//     Authorization: 'Bearer ' + localStorage.getItem('token')
-//   })
-// };
+const httpOptions = {
+  headers: new HttpHeaders({
+    Authorization: 'Bearer ' + localStorage.getItem('token')
+  })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -21,10 +21,14 @@ export class UserService {
 constructor(private http: HttpClient) { }
 
 getUsers(): Observable<User[]> {
-  return this.http.get<User[]>(this.baseUrl + 'users');
+  return this.http.get<User[]>(this.baseUrl + 'users', httpOptions);
 }
 
 getUser(id): Observable<User> {
-  return this.http.get<User>(this.baseUrl + 'users/' + id);
+  return this.http.get<User>(this.baseUrl + 'users/' + id, httpOptions);
+}
+
+updateUser(id: number, user: User) {
+  return this.http.put(this.baseUrl + 'users/' + id, user);
 }
 }
