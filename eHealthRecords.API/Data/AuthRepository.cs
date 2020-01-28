@@ -15,7 +15,7 @@ namespace eHealthRecords.API.Data
         }
         public async Task<User> Login(string username, string password)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(x => x.Username == username); //will return matching username or null if no match
+            var user = await _context.Users.Include(p => p.Photos).FirstOrDefaultAsync(x => x.Username == username); //will return matching username or null if no match
         
             if(username == null)
                 return null;

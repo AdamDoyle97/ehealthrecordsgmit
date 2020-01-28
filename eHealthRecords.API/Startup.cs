@@ -43,7 +43,9 @@ namespace eHealthRecords.API
                 Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
             services.AddCors(); // CORS allows the api to send data to the client and the client accepts data from the server knowing its safe
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
             services.AddAutoMapper(typeof(RecordsRepository).Assembly);
+            services.AddTransient<Seed>();
             services.AddScoped<IAuthRepository, AuthRepository>(); // service is created once per request for auth repository 
             services.AddScoped<IRecordsRepository, RecordsRepository>(); 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -54,7 +56,7 @@ namespace eHealthRecords.API
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII
                             .GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
                         ValidateIssuer = false,
-                        ValidateAudience = false,
+                        ValidateAudience = false
                     };
                 });
         }
@@ -95,7 +97,10 @@ namespace eHealthRecords.API
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseCors(x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()); // cors policy weak as its still in development
+            app.UseCors(x => x.WithOrigins("http://localhost:4200")
+                .AllowAnyHeader().AllowAnyMethod().AllowCredentials());
+
+            // app.UseCors(x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()); // cors policy weak as its still in development
 
             app.UseEndpoints(endpoints =>
             {

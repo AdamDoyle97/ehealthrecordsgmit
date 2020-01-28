@@ -19,23 +19,26 @@ namespace eHealthRecords.API.Migrations
             modelBuilder.Entity("eHealthRecords.API.Models.Photo", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .ValueGeneratedOnAdd();
+                       // .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("DateAdded")
-                        .HasColumnType("TEXT");
+                    b.Property<DateTime>("DateAdded");
+                   //     .HasColumnType("TEXT");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("TEXT");
+                    b.Property<string>("Description");
+                     //   .HasColumnType("TEXT");
 
-                    b.Property<bool>("IsMain")
-                        .HasColumnType("INTEGER");
+                    b.Property<bool>("IsMain");
+                    //    .HasColumnType("INTEGER");
 
-                    b.Property<string>("Url")
-                        .HasColumnType("TEXT");
+                    b.Property<string>("PublicId");
+                    //    .HasColumnType("TEXT");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Url");
+                 //       .HasColumnType("TEXT");
+
+                    b.Property<int>("UserId");
+                  //      .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -47,47 +50,47 @@ namespace eHealthRecords.API.Migrations
             modelBuilder.Entity("eHealthRecords.API.Models.User", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .ValueGeneratedOnAdd();
+                     //   .HasColumnType("INTEGER");
 
-                    b.Property<string>("City")
-                        .HasColumnType("TEXT");
+                    b.Property<string>("City");
+                      //  .HasColumnType("TEXT");
 
-                    b.Property<string>("Conditions")
-                        .HasColumnType("TEXT");
+                    b.Property<string>("Conditions");
+                    //    .HasColumnType("TEXT");
 
-                    b.Property<string>("Country")
-                        .HasColumnType("TEXT");
+                    b.Property<string>("Country");
+                    //    .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("TEXT");
+                    b.Property<DateTime>("Created");
+                   //     .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("DateOfBirth")
-                        .HasColumnType("TEXT");
+                    b.Property<DateTime>("DateOfBirth");
+                   //     .HasColumnType("TEXT");
 
-                    b.Property<string>("Gender")
-                        .HasColumnType("TEXT");
+                    b.Property<string>("Gender");
+                     //   .HasColumnType("TEXT");
 
-                    b.Property<string>("Introduction")
-                        .HasColumnType("TEXT");
+                    b.Property<string>("Introduction");
+                    //    .HasColumnType("TEXT");
 
-                    b.Property<string>("KnownAs")
-                        .HasColumnType("TEXT");
+                    b.Property<string>("KnownAs");
+                   //     .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("LastActive")
-                        .HasColumnType("TEXT");
+                    b.Property<DateTime>("LastActive");
+                    //    .HasColumnType("TEXT");
 
-                    b.Property<string>("LookingForText")
-                        .HasColumnType("TEXT");
+                    b.Property<string>("LookingFor");
+                 //       .HasColumnType("TEXT");
 
-                    b.Property<byte[]>("PasswordHash")
-                        .HasColumnType("BLOB");
+                    b.Property<byte[]>("PasswordHash");
+                    //    .HasColumnType("BLOB");
 
-                    b.Property<byte[]>("PasswordSalt")
-                        .HasColumnType("BLOB");
+                    b.Property<byte[]>("PasswordSalt");
+                     //   .HasColumnType("BLOB");
 
-                    b.Property<string>("Username")
-                        .HasColumnType("TEXT");
+                    b.Property<string>("Username");
+                   //     .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -97,11 +100,11 @@ namespace eHealthRecords.API.Migrations
             modelBuilder.Entity("eHealthRecords.API.Models.Value", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .ValueGeneratedOnAdd();
+                     //   .HasColumnType("INTEGER");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("TEXT");
+                    b.Property<string>("Name");
+                    //    .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -113,8 +116,8 @@ namespace eHealthRecords.API.Migrations
                     b.HasOne("eHealthRecords.API.Models.User", "User")
                         .WithMany("Photos")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
+                       // .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

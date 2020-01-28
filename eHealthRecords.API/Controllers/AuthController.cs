@@ -1,4 +1,5 @@
 using System;
+using AutoMapper;
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
@@ -20,8 +21,10 @@ namespace eHealthRecords.API.Controllers
     {
         private readonly IAuthRepository _repo;
         private readonly IConfiguration _config;
-        public AuthController(IAuthRepository repo, IConfiguration config) // injects auth repository 
+        private readonly IMapper _mapper;
+        public AuthController(IAuthRepository repo, IConfiguration config, IMapper mapper) // injects auth repository 
         {
+            _mapper = mapper;
             _config = config;
             _repo = repo;
         }
@@ -75,8 +78,12 @@ namespace eHealthRecords.API.Controllers
 
             var token = tokenHandler.CreateToken(tokenDescriptor); // token contains jwt token that returns to client
 
-            return Ok(new {
-                token = tokenHandler.WriteToken(token)
+            var user = _mapper.Map<UserForListDto>(userFromRepo);
+
+            return Ok(new
+            {
+                token = tokenHandler.WriteToken(token),
+                user
             });
         }
     }
