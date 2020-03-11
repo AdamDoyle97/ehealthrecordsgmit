@@ -37,8 +37,8 @@ namespace eHealthRecords.API.Models
 
         public ICollection<Photo> Photos { get; set; }
 
-        // public ICollection<WatchList> PatientWatch { get; set; }
-        // public ICollection<WatchList> DoctorWatch { get; set; }
+        public ICollection<WatchList> PatientWatch { get; set; }
+        public ICollection<WatchList> DoctorWatch { get; set; }
 
     }
 }
