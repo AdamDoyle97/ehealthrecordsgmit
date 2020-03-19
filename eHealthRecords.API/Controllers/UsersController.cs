@@ -25,6 +25,7 @@ namespace eHealthRecords.API.Controllers
         {
             _mapper = mapper;
             _repo = repo;
+            
         }
 
         [HttpGet]
@@ -74,6 +75,34 @@ namespace eHealthRecords.API.Controllers
                 return NoContent();
 
             throw new Exception($"Updating user {id} failed on save");
+        }
+
+        [HttpPost("{id}/watch/{recipientId}")]
+        public async Task<IActionResult> WatchUser(int id, int recipientId)
+        {
+            if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
+
+            var watch = await _repo.GetWatch(id, recipientId);
+
+            if (watch != null)
+            return BadRequest("User already on Watch List");
+
+            if(await _repo.GetUser(recipientId) == null)
+                return NotFound();
+
+            watch = new Watch
+            {
+                DoctorId = id,
+                PatientId = recipientId
+            };
+
+            _repo.Add<Watch>(watch);
+
+            if (await _repo.SaveAll())
+                return Ok();
+            
+            return BadRequest("Failed to add user to watch list");
         }
     }
 }

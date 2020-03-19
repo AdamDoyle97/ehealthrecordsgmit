@@ -14,26 +14,37 @@ namespace eHealthRecords.API.Data
 
         public DbSet<Photo> Photos { get; set; }
 
-        public DbSet<WatchList> Watch { get; set; }
+        public DbSet<Watch> WatchList { get; set; }
+
+        public DbSet<Message> Messages { get; set; }
 
         //this will allow the user to not put patient on watch list more than once
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<WatchList>()
+            builder.Entity<Watch>()
                 .HasKey(k => new {k.DoctorId, k.PatientId});
 
-            builder.Entity<WatchList>()
+            builder.Entity<Watch>()
                 .HasOne(u => u.PatientWatch)
                 .WithMany(u => u.DoctorWatch)
                 .HasForeignKey(u => u.PatientId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            builder.Entity<WatchList>()
+            builder.Entity<Watch>()
                 .HasOne(u => u.DoctorWatch)
                 .WithMany(u => u.PatientWatch)
                 .HasForeignKey(u => u.DoctorId)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            builder.Entity<Message>()
+                .HasOne(u => u.Sender)
+                .WithMany(m => m.MessagesSent)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Message>()
+                .HasOne(u => u.Recipient)
+                .WithMany(m => m.MessagesReceived)
+                .OnDelete(DeleteBehavior.Restrict);
         }
 
 
