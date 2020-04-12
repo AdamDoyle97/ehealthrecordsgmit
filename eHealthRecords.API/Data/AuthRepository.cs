@@ -8,7 +8,7 @@ namespace eHealthRecords.API.Data
 // tells class were using IAuth
     public class AuthRepository : IAuthRepository
     {
-        private readonly DataContext _context;
+        private readonly DataContext _context; // allows access to datacontext from repository
         public AuthRepository(DataContext context)
         {
             _context = context;
@@ -17,7 +17,7 @@ namespace eHealthRecords.API.Data
         {
             var user = await _context.Users.Include(p => p.Photos).FirstOrDefaultAsync(x => x.Username == username); //will return matching username or null if no match
         
-            if(user == null)
+            if(user == null) // if user doesnt exists returns null
                 return null;
 
             if(!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt)) // returns true or false depending if password macthes
