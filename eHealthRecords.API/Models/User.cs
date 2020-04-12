@@ -39,10 +39,7 @@ namespace eHealthRecords.API.Models
 
         public ICollection<Watch> PatientWatch { get; set; }
         public ICollection<Watch> DoctorWatch { get; set; }
-
         public ICollection<Message> MessagesSent { get; set; }
-
         public ICollection<Message> MessagesReceived { get; set; }
-
     }
 }
