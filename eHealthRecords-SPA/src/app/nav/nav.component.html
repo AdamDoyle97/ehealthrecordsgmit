@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+  <div class="container">
+      <a class="navbar-brand" [routerLink]="['/home']" style="color: aliceblue;" ><i class="fa fa-heartbeat" style="font-size:20px; color: red;"></i> eHealthRecords</a>
+
+      <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/members']"><i class="fa fa-user"></i> Profile</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/lists']"><i class="fa fa-user-md"></i> Doctor</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/messages']"><i class="fa fa-address-book"></i> Message</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active" *ngIf="isAdmin()">
+          <a class="nav-link" [routerLink]="['/requests']"><i class="fa fa-facebook"></i> Requests</a>
+        </li>
+        </ul>
+        <div *ngIf="loggedIn()" class="dropdown" dropdown>
+          <span class="mr-1">
+          <img src="{{photoUrl || '../../../../assets/user.png'}}" alt="">
+          </span>
+            <button class="dropdown-toggle" dropdownToggle>
+              {{authService.decodedToken?.unique_name | titlecase}} Medical
+            </button>
+
+            <div class="dropdown-menu mt-3" *dropdownMenu>
+              <a class="dropdown-item" [routerLink]="['/member/edit/',userId]"><i class="fa fa-user"></i>Edit Profile</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out"></i> Log out</a>
+            </div>
+          </div>
+
+       <form *ngIf="!loggedIn()" #loginForm="ngForm" class="form-inline my-2 my-lg-0" (ngSubmit)="login()">
+        <input class="form-control mr-sm-2"
+        type="text" name="username"
+        placeholder="Username"
+        required [(ngModel)]="model.username">
+        <input class="form-control mr-sm-2"
+        type="password"
+        name="password"
+        placeholder="Password"
+        required [(ngModel)]="model.password">
+        <button [disabled]="!loginForm.valid" class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
+      </form>
+  </div>
+
+</nav>

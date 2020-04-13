@@ -1,0 +1,26 @@
+<div class="text-center mt-3">
+  <h2>{{watchParam === 'DoctorWatch' ? 'Medical List' : 'Patient Watch List'}} : {{pagination.totalItems}}</h2>
+</div>
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="btn-group">
+      <button class="btn btn-primary" [(ngModel)]="watchParam" btnRadio="DoctorWatch" (click)="loadUsers()">Medical Watch</button>
+      <button class="btn btn-primary" [(ngModel)]="watchParam" btnRadio="PatientWatch" (click)="loadUsers()">Patient Watch List</button>
+    </div>
+  </div>
+
+  <br>
+<div class="row">
+  <div *ngFor="let user of users" class="col-sm-6 col-md-4 col-lg-4 col-xl-2">
+    <app-member-card [user]="user"></app-member-card>
+  </div>
+</div>
+
+</div>
+
+<div class="d-flex justify-content-center">
+  <pagination [boundaryLinks]="true" [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.itemsPerPage" [(ngModel)]="pagination.currentPage"
+  (pageChanged)="pageChanged($event)" previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
+</pagination>
+</div>
