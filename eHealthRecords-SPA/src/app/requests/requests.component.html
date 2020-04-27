@@ -1,0 +1,31 @@
+<br>
+<table class="table table-hover table-bordered container">
+  <thead>
+    <tr class="bg-success">
+      <th scope="col">UserName</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Created</th>
+      <th scope="col">City</th>
+      <th scope="col">Country</th>
+      <th scope="col" colspan="3">Roles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userList">
+      <td>{{user.username}}</td>
+      <td>{{user.gender}}</td>
+      <td>{{user.created | date: 'yyyy-MM-dd'}}</td>
+      <td>{{user.city}}</td>
+      <td>{{user.country}}</td>
+      <td>
+        <Button class="btn btn-primary btn-sm" (click)="giveRole(user.id,2)">Doctor</Button>
+      </td>
+      <td>
+        <Button class="btn btn-success btn-sm" (click)="giveRole(user.id,3)">Patient</Button>
+      </td>
+      <td>
+        <Button class="btn btn-info btn-sm" (click)="giveRole(user.id,1)">Admin</Button>
+      </td>
+    </tr>
+  </tbody>
+</table>

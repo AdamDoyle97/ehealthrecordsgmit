@@ -1,0 +1,22 @@
+[
+  {
+    "Name": "Super Admin",
+    "RoleType": 1,
+    "Permissions": "C|R|U|D"
+  },
+  {
+    "Name": "Doctor",
+    "RoleType": 2,
+    "Permissions": "R|U"
+  },
+  {
+    "Name": "Patient",
+    "RoleType": 3,
+    "Permissions": "R"
+  },
+  {
+    "Name": "User",
+    "RoleType": 0,
+    "Permissions": "R"
+  }
+]
