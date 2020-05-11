@@ -11,8 +11,8 @@ import { PermissionService } from './permission.service';
   providedIn: 'root'
 })
 export class AuthService {
-  baseUrl = environment.apiUrl + 'auth/';
-  jwtHelper = new JwtHelperService();
+  baseUrl = environment.apiUrl + 'auth/'; // connects to api url when using http pipeline
+  jwtHelper = new JwtHelperService(); // Jwt token service
   decodedToken: any;
   currentUser: User;
   photoUrl = new BehaviorSubject<string>('../../assets/user.png');
@@ -35,7 +35,7 @@ login(model: any) {
           localStorage.setItem('user', JSON.stringify(user.user));
           this.decodedToken = this.jwtHelper.decodeToken(user.token);
           this.currentUser = user.user;
-          this.permissionService.hold(this.currentUser.roleId);
+          this.permissionService.hold(this.currentUser.roleId); // user role kept the same
           // console.log(this.decodedToken); // no need to take away token anymore
           this.changeMemberPhoto(this.currentUser.photoUrl);
         }

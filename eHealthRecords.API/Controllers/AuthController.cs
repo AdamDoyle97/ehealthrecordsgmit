@@ -59,7 +59,7 @@ namespace eHealthRecords.API.Controllers
 
             var claims = new[] // security for name id and username
             {
-                new Claim(ClaimTypes.NameIdentifier, userFromRepo.Id.ToString()),
+                new Claim(ClaimTypes.NameIdentifier, userFromRepo.Id.ToString()), 
                 new Claim(ClaimTypes.Name, userFromRepo.Username)
             };
 

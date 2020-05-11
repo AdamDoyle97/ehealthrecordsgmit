@@ -32,11 +32,13 @@ namespace eHealthRecords.API.Data
             u.DoctorId == userId && u.PatientId == recipientId);
         }
 
+        // setting main photo of user
         public async Task<Photo> GetMainPhotoForUser(int userId)
         {
             return await _context.Photos.Where(u => u.UserId == userId).FirstOrDefaultAsync(p => p.IsMain);
         }
 
+// get photo URL
         public async Task<Photo> GetPhoto(int id)
         {
             var photo = await _context.Photos.FirstOrDefaultAsync(p => p.Id == id);
@@ -68,7 +70,7 @@ namespace eHealthRecords.API.Data
                 users = users.Where(u => userDoctor.Contains(u.Id));
             }
 
-            // returns array of patients on watch list
+            // returns list of patients on watch list
             if (userParams.PatientWatch)
             {
                 var userPatient = await GetUserWatchList(userParams.UserId, userParams.DoctorWatch);

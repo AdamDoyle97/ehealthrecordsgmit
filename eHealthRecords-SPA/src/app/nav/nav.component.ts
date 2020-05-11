@@ -15,7 +15,7 @@ export class NavComponent implements OnInit {
   photoUrl: string;
   userId: number;
   constructor(public authService: AuthService , private alertify: AlertifyService,
-              private router: Router, private permissionService: PermissionService) { }
+              private router: Router, private permissionService: PermissionService) { } // exporting files/services
 
   ngOnInit() {
     this.authService.currentPhotoUrl.subscribe(photoUrl => this.photoUrl = photoUrl);
@@ -25,6 +25,7 @@ export class NavComponent implements OnInit {
 // login method the shows successful login
 
   login() {
+    // calls auth service to conntect to http pipeline
     this.authService.login(this.model).subscribe(next => {
     this.alertify.success('logged in successfully');
     this.userId = this.authService.decodedToken.nameid;
@@ -33,7 +34,7 @@ export class NavComponent implements OnInit {
       console.log(error);
       this.alertify.error(error);
     }, () => {
-      this.router.navigate(['/members']);
+      this.router.navigate(['/members']); // if successful redirects route to render new html componenet
     });
   }
 

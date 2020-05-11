@@ -74,6 +74,7 @@ namespace eHealthRecords.API.Controllers
             throw new Exception($"Updating user {id} failed on save");
         }
 
+        // watch list task
         [HttpPost("{id}/watch/{recipientId}")]
         public async Task<IActionResult> WatchUser(int id, int recipientId)
         {
@@ -110,6 +111,7 @@ namespace eHealthRecords.API.Controllers
             return Ok(userVm);
         }
 
+        // update user roles to patient/doctor/admin
         [HttpPost("update")]
         public async Task<IActionResult> UpdateRoleId(ChangeRoleIdDto model)
         {

@@ -1,0 +1,150 @@
+Date : 2020-05-04 14:14:53
+Directory : c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA
+Total : 97 files,  17285 codes, 161 comments, 391 blanks, all 17837 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          8 |     14,879 |         20 |          6 |     14,905 |
+| TypeScript |         57 |      1,564 |        124 |        285 |      1,973 |
+| HTML       |         14 |        613 |          7 |         43 |        663 |
+| CSS        |         14 |        152 |          1 |         36 |        189 |
+| JavaScript |          2 |         53 |          8 |          4 |         65 |
+| Markdown   |          1 |         14 |          0 |         14 |         28 |
+| Properties |          1 |         10 |          1 |          3 |         14 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                                    | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                       |         97 |     17,285 |        161 |        391 |     17,837 |
+| e2e                                                                                                                                     |          4 |         64 |          7 |         11 |         82 |
+| e2e\src                                                                                                                                 |          2 |         27 |          1 |          8 |         36 |
+| src                                                                                                                                     |         83 |      2,302 |        131 |        356 |      2,789 |
+| src\app                                                                                                                                 |         75 |      2,214 |         60 |        325 |      2,599 |
+| src\app\_enums                                                                                                                          |          1 |          6 |          0 |          1 |          7 |
+| src\app\_guards                                                                                                                         |          2 |         34 |          0 |          6 |         40 |
+| src\app\_models                                                                                                                         |          4 |         49 |          0 |          6 |         55 |
+| src\app\_resolvers                                                                                                                      |          6 |        139 |          0 |         22 |        161 |
+| src\app\_services                                                                                                                       |          9 |        291 |         10 |         60 |        361 |
+| src\app\home                                                                                                                            |          4 |         62 |          3 |         15 |         80 |
+| src\app\lists                                                                                                                           |          4 |         83 |          2 |         17 |        102 |
+| src\app\members                                                                                                                         |         24 |        851 |         23 |        112 |        986 |
+| src\app\members\member-card                                                                                                             |          4 |        105 |          2 |         19 |        126 |
+| src\app\members\member-detail                                                                                                           |          4 |        148 |         11 |         20 |        179 |
+| src\app\members\member-edit                                                                                                             |          4 |        144 |          2 |         15 |        161 |
+| src\app\members\member-list                                                                                                             |          4 |        130 |          1 |         23 |        154 |
+| src\app\members\member-messages                                                                                                         |          4 |        147 |          5 |         16 |        168 |
+| src\app\members\photo-editor                                                                                                            |          4 |        177 |          2 |         19 |        198 |
+| src\app\messages                                                                                                                        |          4 |        136 |          6 |         18 |        160 |
+| src\app\nav                                                                                                                             |          4 |        121 |          5 |         19 |        145 |
+| src\app\register                                                                                                                        |          4 |        179 |         10 |         27 |        216 |
+| src\app\requests                                                                                                                        |          3 |         64 |          0 |          4 |         68 |
+| src\environments                                                                                                                        |          2 |          8 |         11 |          4 |         23 |
++-----------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                                                | language   | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\.editorconfig                                                     | Properties |         10 |          1 |          3 |         14 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\README.md                                                         | Markdown   |         14 |          0 |         14 |         28 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\angular.json                                                      | JSON       |        106 |         20 |          0 |        126 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\e2e\protractor.conf.js                                            | JavaScript |         24 |          6 |          2 |         32 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\e2e\src\app.e2e-spec.ts                                           | TypeScript |         18 |          1 |          5 |         24 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\e2e\src\app.po.ts                                                 | TypeScript |          9 |          0 |          3 |         12 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\e2e\tsconfig.json                                                 | JSON       |         13 |          0 |          1 |         14 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\karma.conf.js                                                     | JavaScript |         29 |          2 |          2 |         33 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\package-lock.json                                                 | JSON       |     14,547 |          0 |          1 |     14,548 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\package.json                                                      | JSON       |         58 |          0 |          1 |         59 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\_enums\userRoles.ts                                       | TypeScript |          6 |          0 |          1 |          7 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\_guards\auth.guard.ts                                     | TypeScript |         22 |          0 |          4 |         26 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\_guards\prevent-unsaved-changes.guard.ts                  | TypeScript |         12 |          0 |          2 |         14 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\_models\message.ts                                        | TypeScript |         13 |          0 |          1 |         14 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\_models\pagination.ts                                     | TypeScript |         10 |          0 |          2 |         12 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\_models\photo.ts                                          | TypeScript |          7 |          0 |          1 |          8 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\_models\user.ts                                           | TypeScript |         19 |          0 |          2 |         21 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\_resolvers\lists.resolver.ts                              | TypeScript |         24 |          0 |          4 |         28 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\_resolvers\member-detail.resolver.ts                      | TypeScript |         21 |          0 |          3 |         24 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\_resolvers\member-edit.resolver.ts                        | TypeScript |         22 |          0 |          3 |         25 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\_resolvers\member-list.resolver.ts                        | TypeScript |         23 |          0 |          4 |         27 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\_resolvers\messages.resolver.ts                           | TypeScript |         26 |          0 |          4 |         30 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\_resolvers\request-list.resolver.ts                       | TypeScript |         23 |          0 |          4 |         27 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\_services\alertify.service.spec.ts                        | TypeScript |         12 |          1 |          4 |         17 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\_services\alertify.service.ts                             | TypeScript |         27 |          1 |          7 |         35 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\_services\auth.service.spec.ts                            | TypeScript |         12 |          1 |          4 |         17 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\_services\auth.service.ts                                 | TypeScript |         46 |          3 |          6 |         55 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\_services\error.interceptor.ts                            | TypeScript |         41 |          1 |          3 |         45 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\_services\permission.service.ts                           | TypeScript |         26 |          0 |          4 |         30 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\_services\storage.service.ts                              | TypeScript |         13 |          0 |          2 |         15 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\_services\user.service.spec.ts                            | TypeScript |         12 |          1 |          4 |         17 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\_services\user.service.ts                                 | TypeScript |        102 |          2 |         26 |        130 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\app.component.css                                         | CSS        |          0 |          0 |          1 |          1 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\app.component.html                                        | HTML       |          2 |          0 |          0 |          2 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\app.component.spec.ts                                     | TypeScript |         27 |          0 |          5 |         32 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\app.component.ts                                          | TypeScript |         24 |          0 |          4 |         28 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\app.module.ts                                             | TypeScript |        110 |          1 |          6 |        117 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\home\home.component.css                                   | CSS        |          0 |          0 |          1 |          1 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\home\home.component.html                                  | HTML       |         21 |          0 |          2 |         23 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\home\home.component.spec.ts                               | TypeScript |         22 |          1 |          6 |         29 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\home\home.component.ts                                    | TypeScript |         19 |          2 |          6 |         27 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\lists\lists.component.css                                 | CSS        |          0 |          0 |          1 |          1 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\lists\lists.component.html                                | HTML       |         22 |          0 |          4 |         26 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\lists\lists.component.spec.ts                             | TypeScript |         22 |          1 |          6 |         29 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\lists\lists.component.ts                                  | TypeScript |         39 |          1 |          6 |         46 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\member-card\member-card.component.css             | CSS        |         31 |          0 |          6 |         37 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\member-card\member-card.component.html            | HTML       |         21 |          0 |          1 |         22 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\member-card\member-card.component.spec.ts         | TypeScript |         22 |          1 |          6 |         29 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\member-card\member-card.component.ts              | TypeScript |         31 |          1 |          6 |         38 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\member-detail\member-detail.component.css         | CSS        |         13 |          0 |          2 |         15 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\member-detail\member-detail.component.html        | HTML       |         58 |          0 |          1 |         59 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\member-detail\member-detail.component.spec.ts     | TypeScript |         22 |          1 |          6 |         29 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\member-detail\member-detail.component.ts          | TypeScript |         55 |         10 |         11 |         76 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\member-edit\member-edit.component.css             | CSS        |         13 |          0 |          2 |         15 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\member-edit\member-edit.component.html            | HTML       |         69 |          0 |          1 |         70 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\member-edit\member-edit.component.spec.ts         | TypeScript |         22 |          1 |          6 |         29 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\member-edit\member-edit.component.ts              | TypeScript |         40 |          1 |          6 |         47 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\member-list\member-list.component.css             | CSS        |          0 |          0 |          1 |          1 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\member-list\member-list.component.html            | HTML       |         56 |          0 |          8 |         64 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\member-list\member-list.component.spec.ts         | TypeScript |         22 |          1 |          6 |         29 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\member-list\member-list.component.ts              | TypeScript |         52 |          0 |          8 |         60 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\member-messages\member-messages.component.css     | CSS        |         21 |          0 |          4 |         25 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\member-messages\member-messages.component.html    | HTML       |         56 |          3 |          3 |         62 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\member-messages\member-messages.component.spec.ts | TypeScript |         22 |          1 |          6 |         29 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\member-messages\member-messages.component.ts      | TypeScript |         48 |          1 |          3 |         52 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\photo-editor\photo-editor.component.css           | CSS        |         11 |          0 |          3 |         14 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\photo-editor\photo-editor.component.html          | HTML       |         66 |          0 |          1 |         67 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\photo-editor\photo-editor.component.spec.ts       | TypeScript |         22 |          1 |          6 |         29 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\members\photo-editor\photo-editor.component.ts            | TypeScript |         78 |          1 |          9 |         88 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\messages\messages.component.css                           | CSS        |          9 |          0 |          2 |         11 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\messages\messages.component.html                          | HTML       |         56 |          4 |          3 |         63 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\messages\messages.component.spec.ts                       | TypeScript |         22 |          1 |          6 |         29 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\messages\messages.component.ts                            | TypeScript |         49 |          1 |          7 |         57 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\nav\nav.component.css                                     | CSS        |          8 |          0 |          1 |          9 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\nav\nav.component.html                                    | HTML       |         44 |          0 |          5 |         49 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\nav\nav.component.spec.ts                                 | TypeScript |         22 |          1 |          6 |         29 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\nav\nav.component.ts                                      | TypeScript |         47 |          4 |          7 |         58 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\register\register.component.css                           | CSS        |          0 |          0 |          1 |          1 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\register\register.component.html                          | HTML       |         98 |          0 |         12 |        110 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\register\register.component.spec.ts                       | TypeScript |         22 |          1 |          6 |         29 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\register\register.component.ts                            | TypeScript |         59 |          9 |          8 |         76 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\requests\requests.component.css                           | CSS        |          3 |          0 |          1 |          4 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\requests\requests.component.html                          | HTML       |         31 |          0 |          1 |         32 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\requests\requests.component.ts                            | TypeScript |         30 |          0 |          2 |         32 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\app\routes.ts                                                 | TypeScript |         36 |          0 |          2 |         38 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\environments\environment.prod.ts                              | TypeScript |          4 |          0 |          1 |          5 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\environments\environment.ts                                   | TypeScript |          4 |         11 |          3 |         18 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\index.html                                                    | HTML       |         13 |          0 |          1 |         14 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\main.ts                                                       | TypeScript |          9 |          0 |          4 |         13 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\polyfills.ts                                                  | TypeScript |          1 |         55 |          8 |         64 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\styles.css                                                    | CSS        |         43 |          1 |         10 |         54 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\test.ts                                                       | TypeScript |         13 |          4 |          4 |         21 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\src\typings.d.ts                                                  | TypeScript |          1 |          0 |          0 |          1 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\tsconfig.app.json                                                 | JSON       |         18 |          0 |          1 |         19 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\tsconfig.json                                                     | JSON       |         27 |          0 |          1 |         28 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\tsconfig.spec.json                                                | JSON       |         18 |          0 |          1 |         19 |
+| c:\Users\doyle\Downloads\EHR-master (2)\EHR-master\eHealthRecords-SPA\tslint.json                                                       | JSON       |         92 |          0 |          0 |         92 |
+| Total                                                                                                                                   |            |     17,285 |        161 |        391 |     17,837 |
++-----------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

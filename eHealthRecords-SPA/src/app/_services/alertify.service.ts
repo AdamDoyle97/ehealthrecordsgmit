@@ -16,18 +16,19 @@ export class AlertifyService {
     });
    }
 
+   // success message prompt
    success(message: string) {
      alertify.success(message);
    }
-
+// erro message prompt
    error(message: string) {
     alertify.error(message);
   }
-
+// warning message prompt
   warning(message: string) {
     alertify.warning(message);
   }
-
+// normal message prompt (logout)
   message(message: string) {
     alertify.message(message);
   }

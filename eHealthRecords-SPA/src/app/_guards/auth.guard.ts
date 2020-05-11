@@ -12,12 +12,12 @@ export class AuthGuard implements CanActivate {
     private router: Router,
     private alertify: AlertifyService
     ) {}
-
+// if user is logged can navigate through webpage
   canActivate(): boolean {
     if (this.authService.loggedIn()) {
       return true;
     }
-
+// alert message to notify user to log-in
     this.alertify.error('Unauthorization, please log-in');
     this.router.navigate(['/home']);
     return false;

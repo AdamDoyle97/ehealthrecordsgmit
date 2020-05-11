@@ -61,6 +61,7 @@ namespace eHealthRecords.API.Controllers
             return Ok(photo);
         }
 
+// adding photo to users account
         [HttpPost]
         public async Task<IActionResult> AddPhotoForUser(int userId, [FromForm]PhotoForCreationDto photoForCreationDto)
         {

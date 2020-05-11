@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
     };
     this.createRegisterForm();
   }
-
+// register form, user will be required to fill in fields
   createRegisterForm() {
     this.registerForm = this.fb.group({
       gender: ['male'],
@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
       confirmPassword: ['', Validators.required]
     }, {validator: this.passwordMatchValidator});
   }
-
+// check if both passwords match
   passwordMatchValidator(g: FormGroup) {
     return g.get('password').value === g.get('confirmPassword').value ? null : {mismatch : true};
   }

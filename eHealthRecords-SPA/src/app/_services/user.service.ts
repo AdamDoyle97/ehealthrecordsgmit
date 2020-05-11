@@ -59,27 +59,27 @@ getUsers(page?, itemsPerPage?, userParams?, watchListParam?): Observable<Paginat
     })
   );
 }
-
+// user photo
 getUser(id): Observable<User> {
   return this.http.get<User>(this.baseUrl + 'users/' + id);
 }
-
+// update user info
 updateUser(id: number, user: User) {
   return this.http.put(this.baseUrl + 'users/' + id, user);
 }
-
+// set photo main
 setMainPhoto(userId: number, id: number) {
   return this.http.post(this.baseUrl + 'users/' + userId + '/photos/' + id + '/setMain', {} );
 }
-
+// delete photo
 deletePhoto(userId: number, id: number) {
   return this.http.delete(this.baseUrl + 'users/' + userId + '/photos/' + id);
 }
-
+// add user to watch list
 sendWatch(id: number, recipientId: number) {
   return this.http.post(this.baseUrl + 'users/' + id + '/watch/' + recipientId, {});
 }
-
+// show messages in inbox/outbox
 getMessages(id: number, page?, itemsPerPage?, messageContainer?) {
   const paginationResult: PaginationResult<Message[]> = new PaginationResult<Message[]>();
 
