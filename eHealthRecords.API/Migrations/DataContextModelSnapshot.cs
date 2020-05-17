@@ -185,6 +185,7 @@ namespace eHealthRecords.API.Migrations
                     b.HasOne("eHealthRecords.API.Models.User", "User")
                         .WithMany("Photos")
                         .HasForeignKey("UserId")
+<<<<<<< HEAD
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -202,6 +203,10 @@ namespace eHealthRecords.API.Migrations
                         .HasForeignKey("PatientId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+=======
+                        .OnDelete(DeleteBehavior.Cascade);
+                       // .IsRequired();
+>>>>>>> eHealthRecords/Messages
                 });
 #pragma warning restore 612, 618
         }

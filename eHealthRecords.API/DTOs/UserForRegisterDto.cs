@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 using System;
+=======
+>>>>>>> eHealthRecords/Messages
 using System.ComponentModel.DataAnnotations;
 
 namespace eHealthRecords.API.DTOs
@@ -8,6 +11,7 @@ namespace eHealthRecords.API.DTOs
     {
         [Required]
         public string Username { get; set; }
+<<<<<<< HEAD
         [Required]
         [StringLength(8, MinimumLength = 4, ErrorMessage = "Password must be between 4 - 8 characters")]
         public string Password { get; set; }
@@ -28,8 +32,18 @@ namespace eHealthRecords.API.DTOs
             Created = DateTime.Now;
             LastActive = DateTime.Now;
         }
+=======
+
+        [Required]
+        [StringLength(8, MinimumLength = 4, ErrorMessage = "Password must be between 4 - 8 characters")]
+        public string Password { get; set; }
+>>>>>>> eHealthRecords/Messages
 
         // [Required]
         // public DateTime DateOfBirth { get; set; }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> eHealthRecords/Messages
